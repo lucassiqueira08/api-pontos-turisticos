@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'core',
-    'atracoes',
+    'apps.pontos_turisticos',
+    'apps.atracoes',
+    'apps.comentarios',
+    'apps.avaliacoes',
+    'apps.enderecos',
 ]
 
 MIDDLEWARE = [

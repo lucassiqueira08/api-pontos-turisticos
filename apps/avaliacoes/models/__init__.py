@@ -1,0 +1,1 @@
+from .avaliacao import Avaliacao
