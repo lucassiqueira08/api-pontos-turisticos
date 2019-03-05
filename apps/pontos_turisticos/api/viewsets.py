@@ -1,6 +1,10 @@
 # from rest_framework.response import Response
-from rest_framework.decorators import action
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.filters import SearchFilter
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
+
 from apps.pontos_turisticos.models import PontoTuristico
 from .serializers import PontoTuristicoSerializer
 
@@ -11,6 +15,22 @@ class PontoTuristicoViewSet(ModelViewSet):
     """
     # queryset = PontoTuristico.objects.all()
     serializer_class = PontoTuristicoSerializer
+
+    # Mecanismo de Autorização
+    permission_classes = (IsAuthenticated,)
+    # IsAuthenticatedOrReadOnly
+    authentication_classes = (TokenAuthentication,)
+
+    filter_backends = (DjangoFilterBackend, SearchFilter)
+    # Permite que seja filtrado por nome e descricao
+    filter_fields = ('nome', 'descricao')
+
+    # Permite que seja feita uma busca por nome e descricao
+    search_fields = ('nome', 'descricao')
+
+    # Lookup field permite que seja feita uma pesquisa via url de um
+    # campo como se fosse um ID, porém deve-se garantir a unicidade.
+    # lookup_field = 'nome'
 
     def get_queryset(self):
         """
