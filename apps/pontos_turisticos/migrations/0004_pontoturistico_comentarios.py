@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('comentarios', '0001_initial'),
         ('pontos_turisticos', '0003_pontoturistico_atracoes'),

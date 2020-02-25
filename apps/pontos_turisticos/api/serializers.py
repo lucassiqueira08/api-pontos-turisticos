@@ -62,4 +62,4 @@ class PontoTuristicoSerializer(ModelSerializer):
         return ponto
 
     def get_descricao_completa(self, obj):
-        return '%s - %s' % (obj.nome, obj.descricao)
+        return f'{obj.nome} - {obj.descricao}'

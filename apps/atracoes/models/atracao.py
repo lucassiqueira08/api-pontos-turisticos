@@ -9,7 +9,7 @@ class Atracao(models.Model):
     idade_minima = models.IntegerField()
 
     def __str__(self):
-        return self.nome
+        return str(self.nome)
 
     def __repr__(self):
-        return self.nome
+        return str(self.nome)

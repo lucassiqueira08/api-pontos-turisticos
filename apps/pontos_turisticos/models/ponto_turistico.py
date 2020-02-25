@@ -26,7 +26,7 @@ class PontoTuristico(models.Model):
 
     @property
     def descricao_completa2(self):
-        return '%s - %s' % (self.nome, self.descricao)
+        return f'{self.nome} - {self.descricao}'
 
     def __str__(self):
         return self.nome
