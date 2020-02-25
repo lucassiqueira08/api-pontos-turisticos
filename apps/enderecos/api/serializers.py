@@ -6,5 +6,6 @@ class EnderecoSerializer(ModelSerializer):
     class Meta:
         model = Endereco
         fields = (
-            'logradouro', 'bairro', 'cidade', 'estado', 'numero', 'cep', 'complemento', 'pais', 'latitude', 'longitude'
+            'id', 'logradouro', 'bairro', 'cidade', 'estado', 'numero', 'cep', 'complemento', 'pais', 'latitude',
+            'longitude'
         )
