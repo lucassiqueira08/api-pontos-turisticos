@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'django_filters',
+    'corsheaders',
     'rest_framework.authtoken',
     'apps.pontos_turisticos',
     'apps.atracoes',
@@ -142,3 +143,18 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
+
+
+MIDDLEWARE_CLASSES = (
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+)
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_WHITELIST = [
+    'http://bucket-pontos-turisticos.s3-website-us-east-1.amazonaws.com',
+]
+CORS_ORIGIN_REGEX_WHITELIST = [
+    'http://bucket-pontos-turisticos.s3-website-us-east-1.amazonaws.com',
+]
