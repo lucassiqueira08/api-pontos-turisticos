@@ -13,7 +13,7 @@ from apps.pontos_turisticos.api.viewsets import PontoTuristicoViewSet
 
 router = routers.DefaultRouter()
 # base_name define qual o model que deve ser apontado.
-router.register(r'pontoturistico', PontoTuristicoViewSet, base_name='PontoTuristico')
+router.register(r'pontoturistico', PontoTuristicoViewSet, basename='PontoTuristico')
 router.register(r'atracoes', AtracaoViewSet)
 router.register(r'enderecos', EnderecoViewSet)
 router.register(r'comentarios', ComentarioViewSet)
