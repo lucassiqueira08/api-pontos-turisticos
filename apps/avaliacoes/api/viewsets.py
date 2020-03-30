@@ -8,5 +8,8 @@ from .serializers import AvaliacaoSerializer
 class AvaliacaoViewSet(ModelViewSet):
     queryset = Avaliacao.objects.all()
     serializer_class = AvaliacaoSerializer
+    # Mecanismo de Autorização
     permission_classes = (IsAuthenticated,)
+    # IsAuthenticatedOrReadOnly
+    authentication_classes = (TokenAuthentication,)
 
