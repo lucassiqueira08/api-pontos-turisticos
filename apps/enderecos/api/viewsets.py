@@ -8,5 +8,8 @@ from .serializers import EnderecoSerializer
 class EnderecoViewSet(ModelViewSet):
     queryset = Endereco.objects.all()
     serializer_class = EnderecoSerializer
+    # Mecanismo de Autorização
     permission_classes = (IsAuthenticated,)
+    # IsAuthenticatedOrReadOnly
+    authentication_classes = (TokenAuthentication,)
 
