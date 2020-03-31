@@ -1,3 +1,5 @@
+from django.http import HttpResponse
+from rest_framework.authentication import TokenAuthentication
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
@@ -12,3 +14,4 @@ class AtracaoViewSet(ModelViewSet):
     permission_classes = (IsAuthenticated,)
     filter_backends = (DjangoFilterBackend,)
     filter_fields = ('nome', 'descricao')
+    authentication_classes = (TokenAuthentication,)
